@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered JEE Revision Tool</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .study-card {
+            transition: transform 0.3s ease;
+        }
+        .study-card:hover {
+            transform: translateY(-5px);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">JEE Master<span class="text-yellow-300">AI</span></h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-yellow-300 transition">Dashboard</a>
+                <a href="#" class="hover:text-yellow-300 transition">Progress</a>
+                <a href="#" class="hover:text-yellow-300 transition">Resources</a>
+                <a href="#" class="hover:text-yellow-300 transition">Profile</a>
+            </nav>
+            <button class="md:hidden"><i class="bi bi-list text-2xl"></i></button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <section class="text-center mb-12 fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Your Personalized JEE Journey</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Let AI guide your preparation with customized study plans and adaptive learning.</p>
+        </section>
+
+        <!-- Study Modes -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="study-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer">
+                <i class="bi bi-question-circle text-4xl text-blue-600"></i>
+                <h3 class="text-xl font-semibold mt-4 mb-2">Quick Quiz</h3>
+                <p class="text-gray-600">Test your knowledge with AI-generated quizzes</p>
+            </div>
+            <div class="study-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer">
+                <i class="bi bi-journal-text text-4xl text-blue-600"></i>
+                <h3 class="text-xl font-semibold mt-4 mb-2">Mock Test</h3>
+                <p class="text-gray-600">Full-length tests with detailed analysis</p>
+            </div>
+            <div class="study-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer">
+                <i class="bi bi-camera-video text-4xl text-blue-600"></i>
+                <h3 class="text-xl font-semibold mt-4 mb-2">Visual Learning</h3>
+                <p class="text-gray-600">Interactive visualizations and concepts</p>
+            </div>
+            <div class="study-card bg-white p-6 rounded-lg shadow-md hover:shadow-xl cursor-pointer">
+                <i class="bi bi-card-text text-4xl text-blue-600"></i>
+                <h3 class="text-xl font-semibold mt-4 mb-2">Flashcards</h3>
+                <p class="text-gray-600">Quick revision with smart flashcards</p>
+            </div>
+        </section>
+
+        <!-- Study Plan Generator -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h3 class="text-2xl font-bold mb-6">Generate Your Study Plan</h3>
+            <form id="studyPlanForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Select Subjects</label>
+                        <select multiple class="w-full p-3 border rounded-lg" id="subjects">
+                            <option>Physics</option>
+                            <option>Chemistry</option>
+                            <option>Mathematics</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Study Hours per Day</label>
+                        <input type="number" min="1" max="12" class="w-full p-3 border rounded-lg" placeholder="Hours">
+                    </div>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+                    Generate Plan
+                </button>
+            </form>
+        </section>
+
+        <!-- Progress Dashboard -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="font-semibold mb-4">Performance Overview</h4>
+                <div class="space-y-4">
+                    <div class="relative pt-1">
+                        <div class="flex mb-2 items-center justify-between">
+                            <div>
+                                <span class="text-xs font-semibold inline-block text-blue-600">Physics</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs font-semibold inline-block text-blue-600">75%</span>
+                            </div>
+                        </div>
+                        <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
+                            <div class="w-3/4 shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-600"></div>
+                        </div>
+                    </div>
+                    <!-- Add similar progress bars for Chemistry and Mathematics -->
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="font-semibold mb-4">Weak Topics</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center text-red-500">
+                        <i class="bi bi-exclamation-circle mr-2"></i>
+                        Thermodynamics
+                    </li>
+                    <li class="flex items-center text-red-500">
+                        <i class="bi bi-exclamation-circle mr-2"></i>
+                        Organic Chemistry
+                    </li>
+                    <li class="flex items-center text-red-500">
+                        <i class="bi bi-exclamation-circle mr-2"></i>
+                        Complex Numbers
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="font-semibold mb-4">Upcoming Tests</h4>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span>Mock Test - Physics</span>
+                        <button class="text-blue-600 hover:underline">Start</button>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <span>Chapter Quiz - Chemistry</span>
+                        <button class="text-blue-600 hover:underline">Start</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Study Plan Form Handler
+        document.getElementById('studyPlanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Generating your personalized study plan...');
+            // Add API integration for AI plan generation
+        });
+
+        // Study Card Click Handlers
+        document.querySelectorAll('.study-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const mode = this.querySelector('h3').textContent;
+                alert(`Loading ${mode} mode...`);
+                // Add navigation logic
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuButton = document.querySelector('button');
+        menuButton.addEventListener('click', () => {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('right-4');
+            nav.classList.toggle('bg-blue-600');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('rounded-lg');
+        });
+    </script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
